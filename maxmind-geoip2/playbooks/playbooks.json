@@ -1,0 +1,310 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - MaxMind GeoIP2 - 1.0.0",
+      "description": "Sample playbooks for \"MaxMind GeoIP2\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "/api/3/images/ef270a30-27d8-4426-8ecc-07ec06199fd4",
+      "uuid": "38b67380-7a32-44f0-bb80-120effe1bed3",
+      "id": 152,
+      "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "createDate": 1639477185,
+      "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "modifyDate": 1639477185,
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Insights",
+          "aliasName": null,
+          "tag": "#MaxMind GeoIP2",
+          "description": "Returns insights details of specified IP Address.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639477645,
+          "collection": "/api/3/workflow_collections/38b67380-7a32-44f0-bb80-120effe1bed3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/646c5ed9-e60d-4824-b04a-454bd952dfa2",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "599543a8-ab9e-4fa2-9b39-448eb5b566ec",
+                "title": "MaxMind GeoIP2: Get Insights",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "646c5ed9-e60d-4824-b04a-454bd952dfa2",
+              "id": 7368
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Insights",
+              "description": null,
+              "arguments": {
+                "name": "MaxMind GeoIP2",
+                "config": "05235a90-f0f1-40ee-958d-a7d55c7fa095",
+                "params": {
+                  "ip_address": "8.8.8.8"
+                },
+                "version": "1.0.0",
+                "connector": "maxmind-geoip2",
+                "operation": "get_insights",
+                "operationTitle": "Get Insights",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "180",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "7207222b-7c95-4f48-9b22-0f3326f78ee5",
+              "id": 7369
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Get Insights",
+              "targetStep": "/api/3/workflow_steps/7207222b-7c95-4f48-9b22-0f3326f78ee5",
+              "sourceStep": "/api/3/workflow_steps/646c5ed9-e60d-4824-b04a-454bd952dfa2",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "4c36fffc-b85e-4704-babf-92dc309e68d2"
+            }
+          ],
+          "priority": null,
+          "uuid": "515bce88-bfd3-4fa3-b6cc-481473706911",
+          "recordTags": [
+            "MaxMind",
+            "GeoIP2"
+          ],
+          "id": 1538,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639477185,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639477668,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Country",
+          "aliasName": null,
+          "tag": "#MaxMind GeoIP2",
+          "description": "Returns country details of specified IP Address.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639477584,
+          "collection": "/api/3/workflow_collections/38b67380-7a32-44f0-bb80-120effe1bed3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ba27cbbb-debb-4a5d-8753-df1ab9805d44",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Country",
+              "description": null,
+              "arguments": {
+                "name": "MaxMind GeoIP2",
+                "config": "05235a90-f0f1-40ee-958d-a7d55c7fa095",
+                "params": {
+                  "ip_address": "8.8.8.8"
+                },
+                "version": "1.0.0",
+                "connector": "maxmind-geoip2",
+                "operation": "get_country",
+                "operationTitle": "Get Country",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "180",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "4b4e28c3-885c-4b64-b23e-c74ca5abcfa9",
+              "id": 7365
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "beee8f55-8a25-4305-8f6c-4bdd6b65603c",
+                "title": "MaxMind GeoIP2: Get Country",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "ba27cbbb-debb-4a5d-8753-df1ab9805d44",
+              "id": 7364
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Get Country",
+              "targetStep": "/api/3/workflow_steps/4b4e28c3-885c-4b64-b23e-c74ca5abcfa9",
+              "sourceStep": "/api/3/workflow_steps/ba27cbbb-debb-4a5d-8753-df1ab9805d44",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "9f220e70-014d-4317-9882-a15b0e4d8bae"
+            }
+          ],
+          "priority": null,
+          "uuid": "bb31094e-788c-4673-8ec0-b33b1905bb09",
+          "recordTags": [
+            "MaxMind",
+            "GeoIP2"
+          ],
+          "id": 1536,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639477185,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639477668,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get City",
+          "aliasName": null,
+          "tag": "#MaxMind GeoIP2",
+          "description": "Returns City details of specified IP Address.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1639477270,
+          "collection": "/api/3/workflow_collections/38b67380-7a32-44f0-bb80-120effe1bed3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/80c89991-572c-4247-b518-c8f8ed6b7be7",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get City",
+              "description": null,
+              "arguments": {
+                "name": "MaxMind GeoIP2",
+                "config": "05235a90-f0f1-40ee-958d-a7d55c7fa095",
+                "params": {
+                  "ip_address": "8.8.8.8"
+                },
+                "version": "1.0.0",
+                "connector": "maxmind-geoip2",
+                "operation": "get_city",
+                "operationTitle": "Get City",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "180",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "6e5eed1d-9e73-4d01-9a1e-e4b966742ada",
+              "id": 7367
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "abdf21cb-a8e8-4ed0-8dbc-d7250db62b5e",
+                "title": "MaxMind GeoIP2: Get City",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "80c89991-572c-4247-b518-c8f8ed6b7be7",
+              "id": 7366
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Get City",
+              "targetStep": "/api/3/workflow_steps/6e5eed1d-9e73-4d01-9a1e-e4b966742ada",
+              "sourceStep": "/api/3/workflow_steps/80c89991-572c-4247-b518-c8f8ed6b7be7",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "36cebbed-c12f-4e75-85a3-daf52f2461b8"
+            }
+          ],
+          "priority": null,
+          "uuid": "ecc1a45e-b424-4ed5-9446-60b833d1e566",
+          "recordTags": [
+            "MaxMind",
+            "GeoIP2"
+          ],
+          "id": 1537,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1639477185,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1639477668,
+          "owners": [],
+          "isPrivate": false
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "MaxMind",
+    "GeoIP2"
+  ]
+}

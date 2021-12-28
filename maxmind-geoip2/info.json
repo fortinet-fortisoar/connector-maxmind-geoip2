@@ -1,0 +1,292 @@
+{
+  "name": "maxmind-geoip2",
+  "label": "MaxMind GeoIP2",
+  "description": "GeoIP2 IP Intelligence provides an extensive breadth of data on IP addresses for content customization, geofencing, user analysis, research, and more.",
+  "publisher": "Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Threat Intelligence",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "server_url",
+        "value": "https://geoip.maxmind.com"
+      },
+      {
+        "title": "User Name",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "username",
+        "tooltip": "The account ID of MaxMind."
+      },
+      {
+        "title": "Password",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "password",
+        "tooltip": "The license key of MaxMind."
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_country",
+      "title": "Get Country",
+      "description": "Returns country details of specified IP Address.",
+      "category": "investigation",
+      "annotation": "get_country",
+      "output_schema": {
+        "continent": {
+          "code": "",
+          "geoname_id": "",
+          "names": {
+            "ja": "",
+            "pt-BR": "",
+            "ru": "",
+            "zh-CN": "",
+            "de": "",
+            "en": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        "country": {
+          "iso_code": "",
+          "geoname_id": "",
+          "names": {
+            "fr": "",
+            "ja": "",
+            "pt-BR": "",
+            "ru": "",
+            "zh-CN": "",
+            "de": "",
+            "en": "",
+            "es": ""
+          }
+        },
+        "maxmind": {
+          "queries_remaining": ""
+        },
+        "registered_country": {
+          "iso_code": "",
+          "geoname_id": "",
+          "names": {
+            "en": "",
+            "es": "",
+            "fr": "",
+            "ja": "",
+            "pt-BR": "",
+            "ru": "",
+            "zh-CN": "",
+            "de": ""
+          }
+        },
+        "traits": {
+          "ip_address": "",
+          "network": ""
+        }
+      },
+      "parameters": [
+        {
+          "title": "IP Address",
+          "name": "ip_address",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the IP address in an IPv4 or an IPv6 format.",
+          "description": "Specify the IP address in an IPv4 or an IPv6 format."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_city",
+      "title": "Get City",
+      "description": "Returns City details of specified IP Address.",
+      "category": "investigation",
+      "annotation": "get_city",
+      "output_schema": {
+        "continent": {
+          "code": "",
+          "geoname_id": "",
+          "names": {
+            "zh-CN": "",
+            "de": "",
+            "en": "",
+            "es": "",
+            "fr": "",
+            "ja": "",
+            "pt-BR": "",
+            "ru": ""
+          }
+        },
+        "country": {
+          "iso_code": "",
+          "geoname_id": "",
+          "names": {
+            "fr": "",
+            "ja": "",
+            "pt-BR": "",
+            "ru": "",
+            "zh-CN": "",
+            "de": "",
+            "en": "",
+            "es": ""
+          }
+        },
+        "location": {
+          "accuracy_radius": "",
+          "latitude": "",
+          "longitude": "",
+          "time_zone": ""
+        },
+        "maxmind": {
+          "queries_remaining": ""
+        },
+        "registered_country": {
+          "iso_code": "",
+          "geoname_id": "",
+          "names": {
+            "ru": "",
+            "zh-CN": "",
+            "de": "",
+            "en": "",
+            "es": "",
+            "fr": "",
+            "ja": "",
+            "pt-BR": ""
+          }
+        },
+        "traits": {
+          "autonomous_system_number": "",
+          "autonomous_system_organization": "",
+          "isp": "",
+          "organization": "",
+          "ip_address": "",
+          "network": ""
+        }
+      },
+      "parameters": [
+        {
+          "title": "IP Address",
+          "name": "ip_address",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the IP address in an IPv4 or an IPv6 format.",
+          "description": "Specify the IP address in an IPv4 or an IPv6 format."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_insights",
+      "title": "Get Insights",
+      "description": "Returns insights details of specified IP Address.",
+      "category": "investigation",
+      "annotation": "get_insights",
+      "output_schema": {
+        "continent": {
+          "code": "",
+          "geoname_id": "",
+          "names": {
+            "ja": "",
+            "pt-BR": "",
+            "ru": "",
+            "zh-CN": "",
+            "de": "",
+            "en": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        "country": {
+          "confidence": "",
+          "iso_code": "",
+          "geoname_id": "",
+          "names": {
+            "pt-BR": "",
+            "ru": "",
+            "zh-CN": "",
+            "de": "",
+            "en": "",
+            "es": "",
+            "fr": "",
+            "ja": ""
+          }
+        },
+        "location": {
+          "accuracy_radius": "",
+          "latitude": "",
+          "longitude": "",
+          "time_zone": ""
+        },
+        "maxmind": {
+          "queries_remaining": ""
+        },
+        "registered_country": {
+          "iso_code": "",
+          "geoname_id": "",
+          "names": {
+            "en": "",
+            "es": "",
+            "fr": "",
+            "ja": "",
+            "pt-BR": "",
+            "ru": "",
+            "zh-CN": "",
+            "de": ""
+          }
+        },
+        "traits": {
+          "static_ip_score": "",
+          "user_count": "",
+          "user_type": "",
+          "autonomous_system_number": "",
+          "autonomous_system_organization": "",
+          "isp": "",
+          "organization": "",
+          "ip_address": "",
+          "network": ""
+        }
+      },
+      "parameters": [
+        {
+          "title": "IP Address",
+          "name": "ip_address",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the IP address in an IPv4 or an IPv6 format.",
+          "description": "Specify the IP address in an IPv4 or an IPv6 format."
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
