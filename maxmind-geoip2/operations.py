@@ -6,9 +6,7 @@ FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
 Copyright end
 """
 import base64
-
 import requests
-
 from connectors.core.connector import get_logger, ConnectorError
 
 logger = get_logger('maxmind-geoip2')

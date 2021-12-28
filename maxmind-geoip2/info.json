@@ -3,7 +3,7 @@
   "label": "MaxMind GeoIP2",
   "description": "GeoIP2 IP Intelligence provides an extensive breadth of data on IP addresses for content customization, geofencing, user analysis, research, and more.",
   "publisher": "Community",
-  "cs_approved": true,
+  "cs_approved": false,
   "cs_compatible": true,
   "version": "1.0.0",
   "category": "Threat Intelligence",
