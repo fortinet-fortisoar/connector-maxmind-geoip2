@@ -19,7 +19,8 @@
         "visible": true,
         "type": "text",
         "name": "server_url",
-        "value": "https://geoip.maxmind.com"
+        "value": "https://geoip.maxmind.com",
+        "description": "The URL of the MaxMind GeoIP2 server to which you will connect and perform the automated operations."
       },
       {
         "title": "User Name",
@@ -28,7 +29,7 @@
         "visible": true,
         "type": "text",
         "name": "username",
-        "tooltip": "The account ID of MaxMind."
+        "description": "The username used to access the MaxMind GioIP2 server to which you will connect and perform the automated operations."
       },
       {
         "title": "Password",
@@ -37,7 +38,7 @@
         "visible": true,
         "type": "password",
         "name": "password",
-        "tooltip": "The license key of MaxMind."
+        "description": "The password used to access the MaxMind GeoIP2 server to which you will connect and perform the automated operations."
       },
       {
         "title": "Verify SSL",
@@ -46,7 +47,8 @@
         "visible": true,
         "type": "checkbox",
         "name": "verify_ssl",
-        "value": true
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
       }
     ]
   },
