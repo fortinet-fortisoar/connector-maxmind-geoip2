@@ -1,7 +1,7 @@
 {
   "name": "maxmind-geoip2",
   "label": "MaxMind GeoIP2",
-  "description": "GeoIP2 IP Intelligence provides an extensive breadth of data on IP addresses for content customization, geofencing, user analysis, research, and more.",
+  "description": "GeoIP2 IP Intelligence provides an extensive breadth of data on IP addresses for content customization, geofencing, user analysis, research, and more. This connector facilitates automated interactions with a MaxMind GeoIP2 server using FortiSOAR™ playbooks.",
   "publisher": "Community",
   "cs_approved": false,
   "cs_compatible": true,
@@ -9,7 +9,7 @@
   "category": "Threat Intelligence",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/maxmind-geoip2/218/maxmind-geoip2-v1-0-0",
   "configuration": {
     "fields": [
       {
@@ -56,7 +56,7 @@
     {
       "operation": "get_country",
       "title": "Get Country",
-      "description": "Returns country details of specified IP Address.",
+      "description": "Retrieves details of a country from MaxMind GeoIP2 based on the IP address you have specified. ",
       "category": "investigation",
       "annotation": "get_country",
       "output_schema": {
@@ -119,7 +119,7 @@
           "editable": true,
           "type": "text",
           "tooltip": "Specify the IP address in an IPv4 or an IPv6 format.",
-          "description": "Specify the IP address in an IPv4 or an IPv6 format."
+          "description": "Specify the IP address, in the IPv4 or IPv6 format, whose country information you want to retrieve from MaxMind GeoIP2."
         }
       ],
       "enabled": true
@@ -127,7 +127,7 @@
     {
       "operation": "get_city",
       "title": "Get City",
-      "description": "Returns City details of specified IP Address.",
+      "description": "Retrieves details of a city from MaxMind GeoIP2 based on the IP address you have specified.",
       "category": "investigation",
       "annotation": "get_city",
       "output_schema": {
@@ -200,7 +200,7 @@
           "editable": true,
           "type": "text",
           "tooltip": "Specify the IP address in an IPv4 or an IPv6 format.",
-          "description": "Specify the IP address in an IPv4 or an IPv6 format."
+          "description": "Specify the IP address, in the IPv4 or IPv6 format, whose city information you want to retrieve from MaxMind GeoIP2."
         }
       ],
       "enabled": true
@@ -208,7 +208,7 @@
     {
       "operation": "get_insights",
       "title": "Get Insights",
-      "description": "Returns insights details of specified IP Address.",
+      "description": "Retrieves insight details from MaxMind GeoIP2 based on the IP address you have specified.",
       "category": "investigation",
       "annotation": "get_insights",
       "output_schema": {
@@ -285,7 +285,7 @@
           "editable": true,
           "type": "text",
           "tooltip": "Specify the IP address in an IPv4 or an IPv6 format.",
-          "description": "Specify the IP address in an IPv4 or an IPv6 format."
+          "description": "Specify the IP address, in the IPv4 or IPv6 format, whose insight information you want to retrieve from MaxMind GeoIP2."
         }
       ],
       "enabled": true
